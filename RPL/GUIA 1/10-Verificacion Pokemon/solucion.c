@@ -21,7 +21,21 @@ Ya incluimos la librería string.h;)
 */
 
 #include "solucion.h"
+#include <stdio.h>
 
 int verificar_pokemon(pokemon_t pokemon, char nombre[MAX_NOMBRE_POKEMON], int cantidad_victorias){
-    //tu código
+    if(strcmp(pokemon.nombre,nombre) == 0){
+        if(pokemon.victorias == cantidad_victorias){
+            return EXITO;
+        }
+    }
+    return ERROR;
+}
+
+int main(){
+    pokemon_t pokemon1;
+    pokemon1.victorias = 15;
+    strcpy(pokemon1.nombre,"Rattataaaaaaaaaaaaa");
+    printf("\n%d\n",verificar_pokemon(pokemon1, "Rattataaaaaaaaaaaaa", 15));
+    return 0;
 }
