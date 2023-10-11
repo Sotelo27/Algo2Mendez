@@ -26,5 +26,9 @@ Eso sí, como no puedo calcular la fuerza con un porcentaje negativo,
 */
 
 void ajustar_fuerza(float* fuerza, float porcentaje){
-    //tu código
+    if (porcentaje >= 0){
+        float auxiliar = 0;
+        auxiliar = (*fuerza*porcentaje)/100;
+        *fuerza = auxiliar;
+    }
 }
