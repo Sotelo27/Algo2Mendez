@@ -1,0 +1,6 @@
+Vulpix;
+2;2;1;
+Charmander;
+5;1;1;
+Pikachu;
+1;2;5;

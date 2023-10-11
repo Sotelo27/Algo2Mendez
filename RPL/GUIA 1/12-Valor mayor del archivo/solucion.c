@@ -34,5 +34,16 @@ Sabiendo que la función fscanf devuelve la cantidad de elementos que leyó, qu�
 #include <stdio.h>
 
 int numero_mas_grande(FILE* archivo){
-    //tu código
+    //estructura un_numero;otro_numero;y_otro_numero;\n; el caracter \n es un salto de línea.
+    int numero;
+    int mayor = 0;
+    if(fscanf(archivo, '%d;', &numero) == 1){
+        mayor = numero;
+    }
+    while (fscanf(archivo, '%d;', &numero) == 1){
+        if (mayor < numero){
+            mayor = numero;
+        }
+    }
+    return mayor;
 }
