@@ -19,6 +19,22 @@ Aclaro que el tipo de retorno void quiere decir que no se debe devolver nada al 
 El retorno se señaliza solamente con un return;.
 */
 
+#include <stdio.h>
+
 void swap(int* primer_valor, int* segundo_valor){
-    //tu código
+    int auxiliar = *primer_valor;
+    *primer_valor = *segundo_valor;
+    *segundo_valor = auxiliar;
+}
+
+int main(){
+  int valorInt1 = 1;
+  int valorInt2 = 2; 
+  int * valorPuntero1;
+  int * valorPuntero2;
+  valorPuntero1 = &valorInt1;
+  valorPuntero2 = &valorInt2;
+  printf("\nEL VALOR 1 ES %d y el valor 2 es %d \n", *valorPuntero1,*valorPuntero2);
+  swap(valorPuntero1,valorPuntero2);
+  printf("\nEL VALOR 1 ES %d y el valor 2 es %d\n", *valorPuntero1,*valorPuntero2);
 }
