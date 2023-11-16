@@ -23,14 +23,30 @@ Recordar que se deben verificar los parámetros pasados. Tiene sentido que los p
 pokemon_t* pokemon_mas_victorioso(pokemon_t* poke1, pokemon_t* poke2, pokemon_t* (*funciones_batallas[MAX])(pokemon_t*, pokemon_t*), 
     int tope) {
     int iteraciones = 0;
-    if(!poke1 || !poke2){
+    //pokemon_t * auxiliar = malloc(sizeof(pokemon_t));
+    int victorias_1 = 0;
+    int victorias_2 = 0;
+
+    if(!poke1){
+        return NULL;
+    }
+    if(!poke2){
         return NULL;
     }
     if(!funciones_batallas){
         return NULL;
     }
-    
-    while(iteraciones < MAX){
-        funciones_batallas[iteraciones](poke1,poke2);
+    while(iteraciones < tope){
+        if(funciones_batallas[iteraciones](poke1,poke2) == poke1){
+            victorias_1++;
+        }else{
+            victorias_2++;
+        }
+        iteraciones++;
+    }
+    if(victorias_1 > victorias_2){
+        return poke1;
+    }else{
+        return poke2;
     }
 }
