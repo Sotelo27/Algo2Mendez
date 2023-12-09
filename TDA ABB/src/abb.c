@@ -112,7 +112,7 @@ void *abb_quitar(abb_t *arbol, void *elemento)
 	if (!arbol)
 		return NULL;
 	void *elemento_eliminado = abb_buscar(arbol, elemento);
-	arbol->nodo_raiz = eliminar_nodo(arbol, arbol->nodo_raiz, elemento);
+	arbol->nodo_raiz = eliminar_nodo(arbol, arbol->nodo_raiz, elemento); 
 	arbol->tamanio--;
 	return elemento_eliminado;
 }
