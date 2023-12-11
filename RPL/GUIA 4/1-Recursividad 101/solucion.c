@@ -18,5 +18,12 @@ En caso de recibirlo como parámetro, la función debe devolver el valor -1 (ya 
 #include "solucion.h"
 
 int factorial(int num) {
-    //tu código
+    if (num < 0) {
+        return ERROR;
+    }
+
+    if (num == 0 || num == 1) {
+        return 1;
+    }
+    return num * factorial(num - 1);
 }
